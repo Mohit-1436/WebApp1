@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login / Signup</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box" id="formBox">
+        <div class="toggle-buttons">
+          <button id="loginBtn" class="active" onclick="showLogin()">
+            Login
+          </button>
+          <button id="signupBtn" onclick="showSignup()">Signup</button>
+        </div>
+        <div class="form-wrapper">
+          <!-- Signup Form -->
+          <form id="signupForm" class="form" onsubmit="return validateSignup()">
+            <h2>Register a new account</h2>
+            <input type="email" id="signupEmail" placeholder="Email" required />
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePassword('signupPassword', this)"
+                >👁</span
+              >
+            </div>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Retype password"
+              required
+            />
+            <div class="checkbox-row">
+              <input type="checkbox" id="policyCheckbox" required />
+              <label for="policyCheckbox"
+                >I agree to the <a href="#">Privacy Policy</a></label
+              >
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="termsCheckbox" required />
+              <label for="termsCheckbox"
+                >I agree to the <a href="#">Terms and Conditions</a></label
+              >
+            </div>
+            <button type="submit" class="primary-btn">Register</button>
+            <div class="social-login">
+              <div class="btn google">
+                <img
+                  src="https://img.icons8.com/color/48/000000/google-logo.png"
+                />
+                Sign up with Google
+              </div>
+              <div class="btn github">
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
+                />
+                Register with GitHub
+              </div>
+            </div>
+            <p class="link-row">
+              <a href="#" onclick="showLogin()">I already have an account</a>
+            </p>
+          </form>
+
+          <!-- Login Form -->
+          <form
+            id="loginForm"
+            class="form active-form"
+            onsubmit="return validateLogin()"
+          >
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required />
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePassword('loginPassword', this)"
+                >👁</span
+              >
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="rememberMe" />
+              <label for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit" class="primary-btn">Login</button>
+            <div class="social-login">
+              <p>Other sign in options</p>
+              <div class="btn google">
+                <img
+                  src="https://img.icons8.com/color/48/000000/google-logo.png"
+                />
+                Sign in with Google
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
